@@ -1,8 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
-data = pd.read_csv("heart.csv")
+data2 = pd.read_csv("Data_Cleaned.csv")
 
 # print(data.head())
 
@@ -43,8 +44,8 @@ data = pd.read_csv("heart.csv")
 
 # plt.boxplot(data["Chol"])
 
-data = data.dropna()
-data.isnull().sum()
+# data = data.dropna()
+# data.isnull().sum()
 
 # data[["Sex","Target"]].hist()
 
@@ -52,7 +53,7 @@ data.isnull().sum()
 
 # data["RestBP"].hist()
 
-data2 = data.drop(152, axis= 0)
+# data2 = data.drop(152, axis= 0)
 
 # print(data[data["Chol"] > 360])
 
@@ -66,11 +67,15 @@ data2 = data.drop(152, axis= 0)
 
 # print(len(data2[(data2["Oldpeak"] > 2)]))
 
-print(len(data2[data2["Oldpeak"]>= 4]))
+# print(len(data2[data2["Oldpeak"]>= 4]))
 
 # plt.boxplot(data2["Oldpeak"])
 
-data2.to_csv("Data_Cleaned.csv")
+# sns.boxplot(x="Sex", y="RestBP", data=data2)
+# print(len(data2[data2["Chol"]>240]))
+# print(len(data2[(data2["Chol"] >= 240) & (data2["Target"] == 1) & (data2["Sex"] == 1)] ))
+
+print(data2.corr(numeric_only=True))
 
 
 plt.show()
