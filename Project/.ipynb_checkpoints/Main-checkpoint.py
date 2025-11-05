@@ -5,6 +5,7 @@ import seaborn as sns
 
 data2 = pd.read_csv("Data_Cleaned.csv")
 
+# print(data.head())
 
 # print("\n\n\n\n\n")
 
